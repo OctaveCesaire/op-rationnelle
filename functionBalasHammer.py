@@ -1,5 +1,5 @@
 import numpy as np# Pour les matrices
-
+###########
 #Calcul de pénalité
 def calculPenality(grap_retire_zone_done):
     n, m = grap_retire_zone_done.shape
