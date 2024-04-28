@@ -1,0 +1,31 @@
+
+    while np.any(coutMarginaux < 0):
+        print("\nIl y a des valeur négatif dans la matrice de coûts marginale.\n\nAjout d'une nouvelle arrête à la proposition initiale.")
+
+        case_slt = recupurer_zone_add(coutMarginaux)
+        graph[0].append(case_slt[0])
+        graph[1].append(case_slt[1])
+        graph[2].append(case_slt[2])
+        TraceGraph(graph,"secondaire")
+
+        cycle = detectionCycle(adjacency_list(graph), nbreCommande, nbreSource)
+
+        if cycle != []:
+            Afficher_Cycle(cycle,"secondaire")
+
+            sortie = marchePied(graph, sortie, nbreCommande, nbreSource)
+
+            graph, b = graphNature(sortie, cout_inti)
+            printMatrice("\nAprès application de la méthode marche-pied.\n\nVoici la nouvelle proposition de solution",sortie)
+
+            potentielSourceCommande = CalculPotentiel(graph, b[2], nbrArret, b[3])
+
+            print("\nRecalculable des nouvelle potentielle:\n",potentielSourceCommande)
+            coutMarginaux = costMargi(cout_inti, potentielSourceCommande)
+            printMatrice("\nCalcul des coûts marginaux", coutMarginaux)
+
+            #print("\nCalcul des coûts marginaux:\n", coutMarginaux)
+        else:
+            print("Le graphe est correcte")
+        break
+
