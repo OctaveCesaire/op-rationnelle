@@ -85,8 +85,46 @@
 
         @retour : "La nouvelle proposition de solutions"
     
-    (8) => 
+    (8) =>Ecriture du code calcul des potentiels utilisant la fonction CalculPotentiel().
+        
+        @param : graph, s,a, c représaant respectivement la matrice des données , la liste des sources,nombre d'arrêtes et la liste des commandes
 
+        @retour : liste des solutions qui servira à l'obtention de la matrice des coûts marginaux grâce à la fonction costMargi()
+    
+    (9) =>Ecriture de la fonction costMargi(res,solutionPotenti) permettant de construire la matrice des coûts marginaux.
+          La matrice obtenu renvoie des floats converti en int avec à {{astype(int)}}
+
+        @param :  res * solutionPotenti = la solution de propositon obtenu * solution du système d'équation des potentielles
+        
+        @retour : martice de cout marginaux
+    
+    (10) =>L'écriture de la fonction costInit() permet d'extrait de côté la matrice de coût intialement donnée
+
+        @param : data :: donnée fournie depuis le fiche test (.txt)
+**********************************
+## La fonction principale du projet : controle_globale(@param)
+*************************************
+
+* #### La fonction controle_globale() est celle qui assure la mise à jour de la proposition initialement considéré comme optimale en vérifiant  que les valeurs de la matrice des coûts marginaux sont tous positives.
+  - #### @param : (coutMarginaux,sortie,graph,nbreCommande,nbreSource,graphinitial,nbrArret,cout_inti)
+         => coutMarginaux : Matrice des coût marginaux;
+         => sortie        : Solution obtenue;
+         => graph         : Graphe tracé;
+         => nbreCommande  : colonnes de toutes nos matrices issues des fichiers test (.txt);
+         => nbreSource    : lignes de toutes nos matrices issues des fichier test (.txt);
+         => graphinitial  : Graphe initiales la proposition que l'on estime optimale;
+         => nbrArret      : Nombre d'arrêtes formant notre graphe / ciruit de transport et non cycle;
+         => cout_inti     : Extrait de matrice constituée des cout de chaque transport.
+  - #### => @ return : (coutMarginaux,sortie,graph,nbreCommande,nbreSource,graphinitial,nbrArret,cout_inti)
+        => coutMarginaux : Matrice des coût marginaux;
+        => sortie        : Solution obtenue;
+        => graph         : Graphe tracé;
+        => nbreCommande  : colonnes de toutes nos matrices issues des fichiers test (.txt);
+        => nbreSource    : lignes de toutes nos matrices issues des fichier test (.txt);
+        => graphinitial  : Graphe initiales la proposition que l'on estime optimale;
+        => nbrArret      : Nombre d'arrêtes formant notre graphe / ciruit de transport et non cycle;
+        => cout_inti     : Extrait de matrice constituée des cout de chaque transport.
+![image Représentation le mécanisme]()
 ### Outils & Usages 
 ****************************
 - [X] GPT : Pour la recherche de certaine module afin de facilité les calcules dont la résolution du système d'équation 
@@ -101,5 +139,8 @@
 * - Extraite des sous graphe pour certaines études
 * - Résolution du système d'équation pour le calcul des potentielle
 * - Ecriture dans un fichier test (.txt)
-* - Dé
 * - Récupération du cycle et calcul de δ
+
+### Modules à installer
+***********************
+numpy =>
