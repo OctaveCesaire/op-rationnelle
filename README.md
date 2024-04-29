@@ -3,11 +3,11 @@
 *************************************************************************
 
 ### Auteur(s) & Rôle(s): 
-    Réalisateur(s) : 
-        => [Nom - prenom] : [Rôle]
-        => [Nom - prenom] : [Rôle]
-        => [Nom - prenom] : [Rôle]
-    Date de réalisation : [Date]
+Réalisateur(s) : 
+ - ###### [Nom - prenom] : [Rôle]
+ - ###### [Nom - prenom] : [Rôle]
+ - ###### [Nom - prenom] : [Rôle]
+ - ###### Date de réalisation : 29/04/2024
 ### Mise à jour potentielle:
 **************************
 + - => Réorganisation du code (Functions dans un dossier globalFunction)
@@ -23,26 +23,26 @@
 
 ### Structure du projet
 ****************************
-    Dans ce projet, vous trouverez trois dossiers avec les contenus suivant:
-    => FunctionGlobal : functionsBalasHammer.py, functionsNordOuest.py, generalFunction.py
-    => Mains          : mainBalasHammer.py     , mainNordOuest.py
-    => Tracées        : ensemble des résultats sortant de l'exécution du programme
-    => Fichiers Test  : Ensemble des fichiers tests (.txt) pour l'exécution du programme
-    => Package Python : - numpy => pour les matrices
-                        - sympy => résolutions de systèmes équations pour le calcul des potentielle
+Dans ce projet, vous trouverez trois dossiers avec les contenus suivant:
+- ###### => FunctionGlobal : functionsBalasHammer.py, functionsNordOuest.py, generalFunction.py
+- ###### => Mains          : mainBalasHammer.py     , mainNordOuest.py
+- ###### => Tracées        : ensemble des résultats sortant de l'exécution du programme
+- ###### => Fichiers Test  : Ensemble des fichiers tests (.txt) pour l'exécution du programme
+- ###### => Package Python : - numpy => pour les matrices
+  ######                     - sympy => résolutions de systèmes équations pour le calcul des potentielle
 
 
 ### Fonctionalités
 ****************************
 ###### Nom et rôle des codes utiles selon leurs importances
 ###### Positions => Rôles
-    (0) =>Lecture du cahier de charge sans prise en compte de la complexité.
+ * - (0) =>Lecture du cahier de charge sans prise en compte de la complexité.
 
-    (1) =>Ecriture du code de lecture de fichier: readingFile( @param : fichierà lire )
+ * - (1) =>Ecriture du code de lecture de fichier: readingFile( @param : fichierà lire )
 
         return:tuple=>(data,order)| data:toutes les lignes sauf la dernier ligne,order:dernière ligne.
 
-    (2) =>Ecriture du code pour la construction du problème de transport initial: graphInit( @param )
+ * - (2) =>Ecriture du code pour la construction du problème de transport initial: graphInit( @param )
 
         @param  : les données prises du fichier.
 
