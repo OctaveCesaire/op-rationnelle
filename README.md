@@ -15,6 +15,7 @@
 + - => Ecriture du code servant à effectuer une boucle jusqu'à épuisement de l'utilisateur
 + - => Ecriture des résultats du programme dans un fichier .txt
 + - => Etudes de la complexité du programme
++ - => Gestion du cas où le graphe n'est ni acyclique ni connexe
 
 ### Problèmatique du projet
 ****************************
@@ -143,4 +144,6 @@
 
 ### Modules à installer
 ***********************
-numpy =>
+### numpy, sympy
+        pip install numpy
+        pip install sympy 
