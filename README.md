@@ -104,7 +104,7 @@
         @param : data :: donnée fournie depuis le fiche test (.txt)
 **********************************
 ## La fonction principale du projet : controle_globale(@param)
-*************************************
+
 
 * #### La fonction controle_globale() est celle qui assure la mise à jour de la proposition initialement considéré comme optimale en vérifiant  que les valeurs de la matrice des coûts marginaux sont tous positives.
   - #### @param : (coutMarginaux,sortie,graph,nbreCommande,nbreSource,graphinitial,nbrArret,cout_inti)
