@@ -59,15 +59,18 @@
 
         @retour : s * c * a * graphe | source*commande*nombre d'arrête*chemin composant la solution.
 
-        @info   : init est le graphe initiale pour NordOuest sinon la matrice des coûts initial.Source et commande sont les listes des sources et commandes composant graphe.Le retour est un tuple (graphe,[Boolean,a,s,c]) où Boolean est True si nombre de source et commande formant le graphe - 1 vaut a.
+        @info   : init est le graphe initiale pour NordOuest sinon la matrice des coûts initial.Source et commande sont les listes
+            des sources et commandes composant graphe.Le retour est un tuple (graphe,[Boolean,a,s,c]) où Boolean est True si nombre de source et commande formant le graphe - 1 vaut a.
         
     (5) =>Ecriture du code permettant d'illustrer les chemin composant le graphe : TraceGraph(@param)
         
         @param : [graph :"Graphe à afficher",message : "String| Pour indiquer le niveau du graphe"]
     
-    (6) =>Ecriture du code permettant de vérifier la présence d'un cycle dans le graphe après avoir converti le graphe obtenu sous forme de dictionnaire grâce à la fonction adjacency_list(graph)
+    (6) =>Ecriture du code permettant de vérifier la présence d'un cycle dans le graphe après avoir converti le graphe obtenu sous
+        forme de dictionnaire grâce à la fonction adjacency_list(graph)
           
-        @param : graph | celui obtenu précédemment avec graphNature(@param) puis on appelle la fonction detectionCycle(dictionnaire,nombre de source,nombre de commande) avec dictionnaire la sortie de adjacency_list(graph).
+        @param : graph | celui obtenu précédemment avec graphNature(@param) puis on appelle la fonction detectionCycle(dictionnaire
+            ,nombre de source,nombre de commande) avec dictionnaire la sortie de adjacency_list(graph).
 
         @retour : [cycle : "Array | numpy de tuple (Commande,Source)"]
 
@@ -75,7 +78,8 @@
         
         @But : Calcul de  δ grâce à marchePied(@param)
 
-        @param : [graphPhy : "numpy|chemin reliant source,commande",ext:"proposition de solution",n :"nombre de ligne", m :"nombre de colonne"]
+        @param : [graphPhy : "numpy|chemin reliant source,commande",ext:"proposition de solution",n :"nombre de ligne",
+            m :"nombre de colonne"]
 
         @retour : "La nouvelle proposition de solutions"
     
