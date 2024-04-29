@@ -28,9 +28,8 @@
     => Mains          : mainBalasHammer.py     , mainNordOuest.py
     => Tracées        : ensemble des résultats sortant de l'exécution du programme
     => Fichiers Test  : Ensemble des fichiers tests (.txt) pour l'exécution du programme
-    => Package Python : 
-                       * numpy => pour les matrices
-                       * sympy => résolutions de systèmes équations pour le calcul des potentielle
+    => Package Python : - numpy => pour les matrices
+                        - sympy => résolutions de systèmes équations pour le calcul des potentielle
 
 
 ### Fonctionalités
