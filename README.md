@@ -60,7 +60,8 @@
         @retour : s * c * a * graphe | source*commande*nombre d'arrête*chemin composant la solution.
 
         @info   : init est le graphe initiale pour NordOuest sinon la matrice des coûts initial.Source et commande sont les listes
-            des sources et commandes composant graphe.Le retour est un tuple (graphe,[Boolean,a,s,c]) où Boolean est True si nombre de source et commande formant le graphe - 1 vaut a.
+            des sources et commandes composant graphe.Le retour est un tuple (graphe,[Boolean,a,s,c]) où Boolean est True si nombre 
+            de source et commande formant le graphe - 1 vaut a.
         
     (5) =>Ecriture du code permettant d'illustrer les chemin composant le graphe : TraceGraph(@param)
         
