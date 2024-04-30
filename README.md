@@ -116,11 +116,11 @@ Dans ce projet, vous trouverez trois dossiers avec les contenus suivant:
 ### Mecanisme du projet
 *************************
 * #### Première réalisation
-   ![Extraction des données](Pictures/image-1.png)
+   ![Extraction des données](./Pictures/image-1.png)
 * #### Secondaire réalisation
-   ![Algorithme Nord-Ouest & Balas-Hammer](Pictures/image-4.png)
+   ![Algorithme Nord-Ouest & Balas-Hammer](./Pictures/image-4.png)
 * #### Troisème réalisation
-   ![alt text](Pictures/image-6.png)
+   ![alt text](./Pictures/image-6.png)
 ### Outils & Usages 
 ****************************
 - [X] GPT : Pour la recherche de certaine module afin de facilité les calcules dont la résolution du système d'équation 
