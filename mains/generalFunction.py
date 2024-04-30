@@ -189,8 +189,9 @@ def marchePied(graphPhy,ext,n,m):
 def TraceGraph(graph,message):
     print("\nTracé du graphe",message)
     i = 0
+    print(" P | C : Cout")
     while i < len(graph[0]):
-        print(f'{graph[0][i]}->{graph[1][i]} : {graph[2][i]}',end="\n")
+        print(f'P{graph[0][i]}->C{graph[1][i]} : cout {graph[2][i]}',end="\n")
         i += 1
 
 def Afficher_Cycle(cycle,message):

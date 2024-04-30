@@ -28,4 +28,5 @@ if cycle == [] and nbreCommande + nbreSource == nbrArret + 1:
 else:
     ### Suite à voir au cas où le grphe est dégénére
     print("Nombre d'arrêt :",nbrArret,"Nombre de source inclus dans le graphe: ", nbreSource,"Nombre de commande inclus dans le graph :",nbreCommande)
+    print("Cycle trouvé :",cycle)
     print("\nLe graphe n'est ni connexe ni acyclique ")

@@ -97,7 +97,7 @@ Dans ce projet, vous trouverez trois dossiers avec les contenus suivant:
 
     ###### @param : data :: donnée fournie depuis le fiche test (.txt)
 **********************************
-## La fonction principale du projet : controle_globale(@param)
+### La fonction principale du projet : controle_globale(@param)
 
 
 * #### La fonction controle_globale() est celle qui assure la mise à jour de la proposition initialement considéré comme optimale en vérifiant  que les valeurs de la matrice des coûts marginaux sont tous positives.
@@ -120,7 +120,14 @@ Dans ce projet, vous trouverez trois dossiers avec les contenus suivant:
     - => nbrArret      : Nombre d'arrêtes formant notre graphe / ciruit de transport et non cycle;
     - => cout_inti     : Extrait de matrice constituée des cout de chaque transport.
 
-#### ![image Représentation le mécanisme]()
+### Mecanisme du projet
+*************************
+* #### Première réalisation
+   ![Extraction des données](image-1.png)
+* #### Secondaire réalisation
+   ![Algorithme Nord-Ouest & Balas-Hammer](image-4.png)
+* #### Troisème réalisation
+   ![alt text](image-6.png)
 ### Outils & Usages 
 ****************************
 - [X] GPT : Pour la recherche de certaine module afin de facilité les calcules dont la résolution du système d'équation 
