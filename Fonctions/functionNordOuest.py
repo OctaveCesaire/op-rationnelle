@@ -1,6 +1,5 @@
 # Importation
-import numpy as np# Pour les matrices
-
+import numpy as np
 # Algo Nord-Ouest
 def RemplassageNordOuset(data):
     ext = np.full((data.shape[0]-1,data.shape[1]-1),-1)

@@ -10,9 +10,7 @@ Réalisateur(s) :
  - ###### Date de réalisation : 29/04/2024
 ### Mise à jour potentielle:
 **************************
-+ - => Réorganisation du code (Functions dans un dossier globalFunction)
-+ - => Dossier Main : Algorithme de Balas Hammer et Nord Ouest
-+ - => Ecriture du code servant à effectuer une boucle jusqu'à épuisement de l'utilisateur
++ - => Réorganisation du code (Fichier Test et Tracées)
 + - => Ecriture des résultats du programme dans un fichier .txt
 + - => Etudes de la complexité du programme
 + - => Gestion du cas où le graphe n'est ni acyclique ni connexe
@@ -24,7 +22,7 @@ Réalisateur(s) :
 ### Structure du projet
 ****************************
 Dans ce projet, vous trouverez trois dossiers avec les contenus suivant:
-- ###### => FunctionGlobal : functionsBalasHammer.py, functionsNordOuest.py, generalFunction.py
+- ###### => Fonctions : functionsBalasHammer.py, functionsNordOuest.py, generalFunction.py
 - ###### => Mains          : mainBalasHammer.py     , mainNordOuest.py
 - ###### => Tracées        : ensemble des résultats sortant de l'exécution du programme
 - ###### => Fichiers Test  : Ensemble des fichiers tests (.txt) pour l'exécution du programme
@@ -123,11 +121,11 @@ Dans ce projet, vous trouverez trois dossiers avec les contenus suivant:
 ### Mecanisme du projet
 *************************
 * #### Première réalisation
-   ![Extraction des données](image-1.png)
+   ![Extraction des données](Pictures/image-1.png)
 * #### Secondaire réalisation
-   ![Algorithme Nord-Ouest & Balas-Hammer](image-4.png)
+   ![Algorithme Nord-Ouest & Balas-Hammer](Pictures/image-4.png)
 * #### Troisème réalisation
-   ![alt text](image-6.png)
+   ![alt text](Pictures/image-6.png)
 ### Outils & Usages 
 ****************************
 - [X] GPT : Pour la recherche de certaine module afin de facilité les calcules dont la résolution du système d'équation 

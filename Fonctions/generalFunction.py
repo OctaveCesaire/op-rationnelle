@@ -1,10 +1,12 @@
 # Importation
-import numpy as np  # Pour les matrices
-from sympy import symbols, Eq, solve #Calcul des potentienls
-
+import numpy as np
+from sympy import symbols, Eq, solve
+#from Fonctions import np,symbols, Eq, solve
+#from FichiersTest
+racineFile = ".FichiersTest."
 # Lecture de fichier OK
 def readingFile(file):
-    with open(file) as f:
+    with open( file) as f:
         FileContent = f.readlines()
         # data table initialize
         data, count = [], []

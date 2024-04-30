@@ -1,5 +1,5 @@
 
-import numpy as np# Pour les matrices
+from Fonctions import np
 
 #Calcul de pénalité
 def calculPenality(grap_retire_zone_done):
