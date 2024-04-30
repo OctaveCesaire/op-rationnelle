@@ -2,7 +2,6 @@
 from Fonctions import readingFile,graphInit,printMatrice,costInit,np
 from Mains.mainBalasHammer import BalasHammer
 from Mains.mainNordOuest import NordOuest
-
 Exit = "y"
 
 while Exit != "n" :
