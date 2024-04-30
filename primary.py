@@ -1,29 +1,17 @@
 #Importation
-from Fonctions import readingFile,graphInit,printMatrice,costInit,np
-from Mains.mainBalasHammer import BalasHammer
-from Mains.mainNordOuest import NordOuest
+from Fonctions import writingFile
+#from Mains.mainBalasHammer import BalasHammer
+#from Mains.mainNordOuest import NordOuest
 Exit = "y"
-
 while Exit != "n" :
-    dt, commande = readingFile("text.txt")
-    cout_inti = costInit(np.array(dt))
-    graphinitial = graphInit(dt, commande)
-    printMatrice("\nAffichage du graphe initial:", graphinitial)
+    test = None
 
-    choice = 3
-    while choice not in [ 1, 2]:
-        choice = int(input("Choisissez un algorithme :\n1- Nord-Ouest\n2- Balas-Hammer\nResponse : "))
+    while test not in ['1','2','3','4','5','6','7','8','9','10','11','12']:
+        test = input("Choisissez le fichier test à éxecuter entre 1 à 12 : ")
 
-    match choice:
-        case 1:
-            NordOuest(graphinitial, cout_inti)
-        case 2:
-            BalasHammer(graphinitial, cout_inti)
-        case _:
-            print("Fin du programme")
-
+    writingFile(test)
     Exit = input("Vouliez-vous poursuivre? (Y/n) :").lower()
 
-    if Exit not in ["y","n"]:
+    while Exit not in ["y","n"]:
         print("Mauvais choix.")
         Exit = input("Vouliez-vous poursuivre? (Y/n) :").lower()

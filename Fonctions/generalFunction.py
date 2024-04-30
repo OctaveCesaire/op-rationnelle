@@ -1,15 +1,11 @@
 # Importation
 import numpy as np
 from sympy import symbols, Eq, solve
-#from Fonctions import np,symbols, Eq, solve
-#from FichiersTest
-racineFile = ".FichiersTest."
 # Lecture de fichier OK
 def readingFile(file):
-    with open( file) as f:
-        FileContent = f.readlines()
-        # data table initialize
-        data, count = [], []
+    directory_path = f'./FichiersTest/test{file}.txt'
+    with open(directory_path) as f:
+        FileContent,data, count = f.readlines(),[], []
 
         # Conversion des lignes en entier et en tableau de tableau: [[],[],[]] withdout first line
         for el in FileContent:
@@ -23,28 +19,23 @@ def readingFile(file):
     f.close()
 
 # Afficher la matrice de donnnees
-def printMatrice(message,data):
+def printMatrice(message,data,f):
+    #file =
+    f.write(f'{message}\n')
     print(message)
     for elt in data:
         for el in elt:
             if 0<= el <= 9:
+                f.write(f'{el}  |')
                 print(el, end="  |")
             elif 10 <= el <= 99:
+                f.write(f'{el} |')
                 print(el,end=" |")
             else:
+                f.write(f'{el}|')
                 print(el,end="|")
+        f.write("\n")
         print()
-
-# Choice the first algo that he would like run firstly
-def choiceAlgo():
-    choice = int(input("Choisissez un algorithme :\n1- Nord-Ouest\n2- Balas-Hammer\nResponse : "))
-    match choice:
-        case 1:
-            print("Algorithme that run now is  form Nord-Ouest")
-        case 2:
-            print("Algorithme that run now is  form Balas-Hammer")
-        case _:
-            print("NULL")
 
 # Graphe Initial pour Algo de Balas-Hammer
 def graphInit(data, order):
@@ -54,13 +45,11 @@ def graphInit(data, order):
 
 # Calcul de Potentiel OK
 def CalculPotentiel(graph, s,a, c):  # Graph : Celui obbtenu apres la methode 1 ou 2
-
     var, i, systemEquation = '', 0, []
     for sommet in s:
         var += 'S' + str(sommet) + ' '
     for commande in c:
         var += 'C' + str(commande) + ' '
-
     while i < a:
         S_var = symbols('S' + str(graph[0][i]))  # Créer un symbole pour S
         C_var = symbols('C' + str(graph[1][i]))  # Créer un symbole pour C
@@ -102,7 +91,6 @@ def graphNature(ext,init):
                     c.append(j)
                 a += 1
     res = [True if (ext.shape == (len(s), len(c)) and a == len(s) + len(c) - 1) else False,a, s, c]
-    #print("graph_phy : ",graph_phy)
     return graph_phy,res
 
 #Séletionner la case avec le cout marginal près faible
@@ -113,14 +101,12 @@ def recupurer_zone_add(coutMarginaux):
         for j in range(m):
             if coutMarginaux[i,j] < 0:
                 zones_slt.append([i,j,abs(coutMarginaux[i,j])])
-
     max_third_element = max([tableau[2] for tableau in zones_slt])
     premier_tableau_max = None
     for tableau in zones_slt:
         if tableau[2] == max_third_element:
             premier_tableau_max = tableau
             break  # Sortir de la boucle une fois que le premier est trouvé
-
     return premier_tableau_max
 
 # Ramener les donnéer en format dictionnaire
@@ -137,23 +123,18 @@ def adjacency_list(edge):
 
 #def detectionCycle(graph,sommet,column):
 def detectionCycle(graph,n,m):
-    circuit = np.empty((n, m), dtype=object)  # Utilisation de dtype=object pour permettre des tuples de différentes tailles
+    circuit,formatted,cycle_found = np.empty((n, m), dtype=object), [],[]  # Utilisation de dtype=object pour permettre des tuples de différentes tailles
     # Initialisation du circuit remplir de -1
     for i in range(n):
         for j in range(m):
             circuit[i, j] = (-1, -1)
-
     for C in graph:
         for S in graph[C]:
             circuit[C,S] = (C,S)
-
-    formatted,cycle_found = [],[]
-
     #Ramener le circuit à un tableau de tableau
     for row in circuit:
         formatted_row = [tuple(cell) for cell in row]
         formatted.append(formatted_row)
-
     for i in range(3):
         for j in range(4):
             sous_matrice = [row[j:j + 2] for row in formatted[i:i + 2]]
@@ -161,17 +142,14 @@ def detectionCycle(graph,n,m):
                 contient_pas = all(element != (-1, -1) for ligne in sous_matrice for element in ligne)
                 if contient_pas:
                     cycle_found.extend(element for ligne in sous_matrice for element in ligne)
-
     return cycle_found
 
 #Marche pied en cas de présence de cycel
 def marchePied(graphPhy,ext,n,m):
     # Créer un graphe de dictionnaire
     graphCor = adjacency_list([graphPhy[0], graphPhy[1]])
-    dictionnaire = {40: [0, 1, 2], 51: [1, 2, 3], 32: [3]}
     # Vérifier si il il y a un cycle après ajout de l'arrêt de coût de marginal négatif
-    cycleFound = detectionCycle(graphCor, n,m)
-    ValDuCycle = {}
+    cycleFound,ValDuCycle = detectionCycle(graphCor, n,m), {}
     for el in cycleFound:
         source = ext[el[1], el[0]]
         ValDuCycle[source] = el
@@ -183,55 +161,52 @@ def marchePied(graphPhy,ext,n,m):
             ext[el[1], el[0]] =  abs(ext[el[1], el[0]] - petit_lambda)
         else:
             ext[el[1], el[0]] = abs(ext[el[1], el[0]] + petit_lambda)
-
         alt = not alt
     return ext
 
 #Affichage du graphe
-def TraceGraph(graph,message):
+def TraceGraph(graph,message,f):
     print("\nTracé du graphe",message)
+    print("Graph :",graph)
+    f.write(f'\nTracé du graphe {message}\n')
     i = 0
     while i < len(graph[0]):
-        print(f'{graph[0][i]}->{graph[1][i]} : {graph[2][i]}',end="\n")
+        print(f'P{graph[0][i]}-> C{graph[1][i]} : {graph[2][i]}',end="\n")
+        f.write(f'P{graph[0][i]}->{graph[1][i]} : {graph[2][i]}\n')
         i += 1
 
-def Afficher_Cycle(cycle,message):
+def Afficher_Cycle(cycle,message,f):
     print("\nAffichage du cycle present dans le graphe",message)
+    f.write(f'\nAffichage du cycle present dans le graphe : {message}')
     for c,s in cycle:
-        print(f'C{c} -> S{s}')
+        print(f'C{c} -> S{s} | ')
+        f.write(f'C{c} -> S{s} | ')
 
 # Algo de controle générale pour le cout marginal
-def controle_globale(coutMarginaux,sortie,graph,nbreCommande,nbreSource,graphinitial,nbrArret,cout_inti):
-
+def controle_globale(coutMarginaux,sortie,graph,nbreCommande,nbreSource,graphinitial,nbrArret,cout_inti,f):
     while np.any(coutMarginaux < 0):
         print("\nIl y a des valeur négatif dans la matrice de coûts marginale.\n\nAjout d'une nouvelle arrête à la proposition initiale.")
-
+        f.write(f'\nIl y a des valeur négatif dans la matrice de coûts marginale.\n\nAjout d\'une nouvelle arrête à la proposition initiale.\n')
         case_slt = recupurer_zone_add(coutMarginaux)
         graph[0].append(case_slt[0])
         graph[1].append(case_slt[1])
         graph[2].append(case_slt[2])
-        TraceGraph(graph,"secondaire")
-
+        TraceGraph(graph,"secondaire",f)
         cycle = detectionCycle(adjacency_list(graph), nbreCommande, nbreSource)
-
         if cycle != []:
-            Afficher_Cycle(cycle,"secondaire")
-
+            Afficher_Cycle(cycle,"secondaire",f)
             sortie = marchePied(graph, sortie, nbreCommande, nbreSource)
-
             graph, b = graphNature(sortie, cout_inti)
-            printMatrice("\nAprès application de la méthode marche-pied.\n\nVoici la nouvelle proposition de solution",sortie)
-
+            printMatrice("\nAprès application de la méthode marche-pied.\n\nVoici la nouvelle proposition de solution",sortie,f)
             potentielSourceCommande = CalculPotentiel(graph, b[2], nbrArret, b[3])
-
             print("\nRecalculable des nouvelle potentielle:\n",potentielSourceCommande)
+            f.write(f'\nRecalculable des nouvelle potentielle:\n {potentielSourceCommande}')
             coutMarginaux = costMargi(cout_inti, potentielSourceCommande)
-            printMatrice("\nCalcul des coûts marginaux", coutMarginaux)
-
-            #print("\nCalcul des coûts marginaux:\n", coutMarginaux)
+            printMatrice("\nCalcul des coûts marginaux", coutMarginaux,f)
         else:
-            print("Le graphe est correcte")
-        break
+            print("Le graphe est correcte :",cycle)
+            break
 
     return coutMarginaux,sortie,graph,nbreCommande,nbreSource,graphinitial,nbrArret,cout_inti
-##
+
+## Ecriture dans Fichier

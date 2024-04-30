@@ -3,15 +3,11 @@
 *************************************************************************
 
 ### Auteur(s) & Rôle(s): 
-Réalisateur(s) : 
- - ###### [Nom - prenom] : [Rôle]
- - ###### [Nom - prenom] : [Rôle]
- - ###### [Nom - prenom] : [Rôle]
+Auteur : 
+  - ###### Ahmed MAMA
  - ###### Date de réalisation : 29/04/2024
 ### Mise à jour potentielle:
 **************************
-+ - => Réorganisation du code (Fichier Test et Tracées)
-+ - => Ecriture des résultats du programme dans un fichier .txt
 + - => Etudes de la complexité du programme
 + - => Gestion du cas où le graphe n'est ni acyclique ni connexe
 
@@ -22,12 +18,11 @@ Réalisateur(s) :
 ### Structure du projet
 ****************************
 Dans ce projet, vous trouverez trois dossiers avec les contenus suivant:
-- ###### => Fonctions : functionsBalasHammer.py, functionsNordOuest.py, generalFunction.py
-- ###### => Mains          : mainBalasHammer.py     , mainNordOuest.py
-- ###### => Tracées        : ensemble des résultats sortant de l'exécution du programme
-- ###### => Fichiers Test  : Ensemble des fichiers tests (.txt) pour l'exécution du programme
-- ###### => Package Python : - numpy => pour les matrices
-  ######                     - sympy => résolutions de systèmes équations pour le calcul des potentielle
+- ###### Fonctions : functionsBalasHammer.py, functionsNordOuest.py, generalFunction.py
+- ###### Mains          : mainBalasHammer.py     , mainNordOuest.py
+- ###### Tracées        : ensemble des résultats sortant de l'exécution du programme.
+- ###### Fichiers Test  : Ensemble des fichiers tests (.txt) pour l'exécution du programme.
+- ###### Package : numpy => pour les matrices | sympy => résolutions de systèmes équations.
 
 
 ### Fonctionalités
