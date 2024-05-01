@@ -1,5 +1,8 @@
-# Recherche Opérationnelle destiné à la résolution de problème de transport
-###  ![Logo Efrei](https://etudestech.com/wp-content/uploads/2022/01/logo_efrei_web_bleu-300x98.png)
+
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://etudestech.com/wp-content/uploads/2022/01/logo_efrei_web_bleu-300x98.png" width="400" alt="Laravel Logo"></a></p>
+
+## Recherche Opérationnelle pour à la résolution de problème de transport
+
 *************************************************************************
 
 ### Auteur(s) & Rôle(s): 
@@ -8,8 +11,8 @@ Auteur :
  - ###### Date de réalisation : 29/04/2024
 ### Mise à jour potentielle:
 **************************
-+ - => Etudes de la complexité du programme
-+ - => Gestion du cas où le graphe n'est ni acyclique ni connexe
++ - => Etudes de la complexité du programme : Non Faite
++ - => Gestion du cas où le graphe n'est ni acyclique ni connexe : Revoir et améliorer le code ConversionToConnexe() Line : 6 of Mains.mainNordOuest puis in mainsBalasHammer
 
 ### Problèmatique du projet
 ****************************

@@ -1,7 +1,6 @@
 #Importation
 from Fonctions import writingFile
-#from Mains.mainBalasHammer import BalasHammer
-#from Mains.mainNordOuest import NordOuest
+
 Exit = "y"
 while Exit != "n" :
     test = None
